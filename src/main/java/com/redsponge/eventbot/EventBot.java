@@ -6,7 +6,7 @@ import net.dv8tion.jda.core.JDABuilder;
 public class EventBot {
 
     public static void main(String[] args) throws Exception {
-        JDA jda = new JDABuilder("NTc1MzEwMTIzNDI2MTE5Njgx.XNGFcg.1JmbYwVdMFRmWxGAFEAOo-44YF8")
+        JDA jda = new JDABuilder("NTc2MDQ5MjA2MjU5NjEzNjk4.XNQ1uA.CYzLf8BvEsrgcpfj5F9YxJ1A5xw")
                 .addEventListener(new EventListener())
                 .build();
     }

@@ -1,5 +1,6 @@
 package com.redsponge.eventbot;
 
+import net.dv8tion.jda.core.Permission;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.events.message.react.MessageReactionAddEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
@@ -14,7 +15,7 @@ public class EventListener extends ListenerAdapter {
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
-        if(event.getMessage().getContentRaw().equals(">beginquiz")) {
+        if(event.getMessage().getContentRaw().equals(">beginquiz") && event.getMember().hasPermission(Permission.ADMINISTRATOR)) {
             Quiz quiz = new Quiz(quizManager, event.getTextChannel(), Constants.questions);
             quizManager.addQuiz(quiz);
             quiz.start();
